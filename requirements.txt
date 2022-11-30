@@ -1,0 +1,5 @@
+flexible_partial
+keyboard
+psutil
+regex
+requests
