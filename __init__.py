@@ -1758,6 +1758,10 @@ class AdbUnicodeKeyboard:
         keyba = [x for x in keyboards if "com.android.adbkeyboard" in x][0]
         execute_adb_command(
             cmd=f"{self.adb_path} -s {self.deviceserial} shell",
+            subcommands=[f"ime enable {keyba}"],
+        )
+        execute_adb_command(
+            cmd=f"{self.adb_path} -s {self.deviceserial} shell",
             subcommands=[f"ime set {keyba}"],
         )
         return self
